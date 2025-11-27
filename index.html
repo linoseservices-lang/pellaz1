@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pellaj Ventures Limited | Software Development & Government Contracting Services Nigeria</title>
+    <meta name="description" content="Leading Nigerian technology firm providing proprietary software solutions and government contracting services. 5+ years serving ministries, agencies & enterprises across Nigeria.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1E3A8A;
+            --secondary: #F59E0B;
+            --accent: #10B981;
+            --neutral-dark: #1F2937;
+            --neutral-medium: #6B7280;
+            --neutral-light: #F9FAFB;
+            --white: #FFFFFF;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--neutral-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            font-weight: 500;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #1e40af;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background-color: #d97706;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--neutral-medium);
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--neutral-dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            display: flex;
+            align-items: center;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.9)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 80%, rgba(245, 158, 11, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            background-color: var(--neutral-light);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        /* Solutions Section */
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .solution-card {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .solution-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .solution-content {
+            padding: 2rem;
+        }
+
+        .solution-content h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .features-list li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .features-list li::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Solution Finder */
+        .solution-finder {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .solution-finder h2 {
+            color: var(--white);
+        }
+
+        .solution-finder p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        /* Clients Section */
+        .clients-section {
+            background-color: var(--neutral-light);
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .client-logo {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .client-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--neutral-medium);
+            font-size: 0.9rem;
+        }
+
+        /* Testimonials */
+        .testimonials-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin: 0 1rem;
+        }
+
+        .testimonial-content {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .testimonial-content::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 4rem;
+            color: var(--secondary);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--neutral-medium);
+            margin-right: 1rem;
+        }
+
+        .author-info h4 {
+            margin-bottom: 0.25rem;
+            font-size: 1rem;
+        }
+
+        .author-info p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            color: var(--neutral-medium);
+        }
+
+        .stars {
+            color: var(--secondary);
+            margin-top: 0.25rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(rgba(30, 58, 138, 0.9), rgba(30, 58, 138, 0.9)), url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+        }
+
+        .cta-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .cta-content h2 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-content p {
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .cta-btns {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .cta-image {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: var(--radius);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--neutral-light);
+            border-radius: var(--radius);
+        }
+
+        .stat-box .number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+
+        .stat-box .label {
+            font-size: 0.9rem;
+            color: var(--neutral-medium);
+        }
+
+        /* Careers Section */
+        .careers {
+            background-color: var(--neutral-light);
+        }
+
+        .careers-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .careers-content {
+            max-width: 500px;
+        }
+
+        .careers-badge {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .careers-content h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .positions-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .positions-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .positions-list li:last-child {
+            border-bottom: none;
+        }
+
+        .position-title {
+            font-weight: 500;
+        }
+
+        .position-tag {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+        }
+
+        .careers-image {
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            border-radius: var(--radius);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--neutral-dark);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-info i {
+            margin-right: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            text-align: center;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.25rem;
+            }
+            
+            .cta-container,
+            .about-content,
+            .careers-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links,
+            .nav-cta {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .cta-btns {
+                flex-direction: column;
+            }
+            
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            section {
+                padding: 3rem 0;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.75rem;
+            }
+            
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Pellaj<span>Ventures</span></a>
+            
+            <button class="mobile-menu-btn">☰</button>
+            
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Clients</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            
+            <div class="nav-cta">
+                <a href="#" class="btn btn-primary">Get Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Innovating Solutions. Powering Institutions.</h1>
+                <p>We build proprietary software solutions that solve real problems and deliver reliable contracting services to government agencies across Nigeria.</p>
+                <div class="hero-btns">
+                    <a href="#" class="btn btn-secondary">Get Started</a>
+                    <a href="#" class="btn btn-outline" style="color: white; border-color: white;">Our Solutions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Pellaj Ventures?</h2>
+                <p>We combine technical expertise with deep understanding of Nigerian institutional needs</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏆</div>
+                    <h3>Homegrown Innovation</h3>
+                    <p>Built to solve global challenges with local solutions. Since 2020, we've delivered technology and services that understand Nigerian institutional needs.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Reliable Delivery</h3>
+                    <p>On-time execution backed by strong project management. From software deployment to government contracts, we deliver what we promise, when we promise.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔒</div>
+                    <h3>Compliance & Standards</h3>
+                    <p>We uphold industry standards and government requirements on all projects. Full transparency and regulatory adherence guaranteed.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">📈</div>
+                    <h3>Scalable Systems</h3>
+                    <p>Solutions that grow with your organization. Our software and services adapt to expanding needs and evolving challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Core Solutions</h2>
+                <p>Comprehensive services tailored to meet the unique needs of Nigerian institutions and enterprises</p>
+            </div>
+            
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <div class="solution-img" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="solution-content">
+                        <h3>Proprietary Software Development</h3>
+                        <p>Tailored, secure, and intuitive applications designed for high-performance environments. From operations management to e-government platforms.</p>
+                        
+                        <ul class="features-list">
+                            <li>Operations Management Systems</li>
+                            <li>HR & Workforce Automation</li>
+                            <li>Case Monitoring & Compliance Tools</li>
+                            <li>Mobile Apps for Enterprise</li>
+                        </ul>
+                        
+                        <a href="#" class="btn btn-outline">Explore Software Solutions</a>
+                    </div>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-img" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="solution-content">
+                        <h3>Government Contracting Services</h3>
+                        <p>Professional execution of services for ministries, departments, and agencies across Nigeria. From ICT infrastructure to administrative support.</p>
+                        
+                        <ul class="features-list">
+                            <li>ICT Infrastructure Supply</li>
+                            <li>System Deployment & Maintenance</li>
+                            <li>Workforce Training Programs</li>
+                            <li>Procurement & General Contracting</li>
+                        </ul>
+                        
+                        <a href="#" class="btn btn-outline">View Contracting Services</a>
+                    </div>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-img" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="solution-content">
+                        <h3>Technology Consulting</h3>
+                        <p>Expert guidance to modernize operations and improve workflow efficiency. We help you identify gaps and implement solutions.</p>
+                        
+                        <ul class="features-list">
+                            <li>Digital Transformation Strategy</li>
+                            <li>Process Automation</li>
+                            <li>Software Selection & Integration</li>
+                            <li>Performance Optimization</li>
+                        </ul>
+                        
+                        <a href="#" class="btn btn-outline">Get Expert Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Finder -->
+    <section class="solution-finder">
+        <div class="container">
+            <div class="section-header">
+                <h2>Find Your Perfect Solution</h2>
+                <p>Not sure which service you need? Answer a few quick questions to discover the right solution for your organization</p>
+            </div>
+            
+            <a href="#" class="btn btn-secondary">Start Solution Finder</a>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="clients-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trusted by Leading Institutions</h2>
+            </div>
+            
+            <div class="clients-grid">
+                <div class="client-logo">NDDC</div>
+                <div class="client-logo">Federal Ministry of Agriculture and Food Supply</div>
+                <div class="client-logo">Federal College of Fisheries and Marine Technology</div>
+                <div class="client-logo">National Identity Management Commission</div>
+                <div class="client-logo">Additional Partner</div>
+                <div class="client-logo">Additional Partner</div>
+            </div>
+            
+            <div class="stats-row">
+                <div class="stat-item">
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">Years Serving Nigerian Institutions</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Projects Delivered</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Government Agencies Served</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">On-Time Delivery</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+            </div>
+            
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Pellaj Ventures delivered our workforce management system ahead of schedule. The platform has reduced our processing time by 45% and improved transparency across departments.</p>
+                        
+                        <div class="testimonial-author">
+                            <div class="author-avatar"></div>
+                            <div class="author-info">
+                                <h4>Director of Operations</h4>
+                                <p>Federal Agency</p>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-container">
+                <div class="cta-content">
+                    <h2>Ready to Transform Your Operations?</h2>
+                    <p>Our team of experts is ready to discuss your specific needs and design a solution that works.</p>
+                    
+                    <div class="cta-btns">
+                        <a href="#" class="btn btn-secondary">Schedule Consultation</a>
+                        <a href="tel:+2348069646617" class="btn btn-outline" style="color: white; border-color: white;">Call Now: +234-806-964-6617</a>
+                    </div>
+                </div>
+                
+                <div class="cta-image" style="background-image: url('https://images.unsplash.com/photo-1551836026-d5c8c2d98d21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section>
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="section-header" style="text-align: left;">
+                        <h2>About Pellaj Ventures Limited</h2>
+                    </div>
+                    
+                    <p>Pellaj Ventures Limited is a technology-driven service provider established in 2020 to meet the rising need for digital transformation in Nigeria's public and private sectors. As a subsidiary of the long-established Pellaj Empire Bakery Enterprise, we bring a reputation for integrity, reliability, and long-term value—powered by innovation.</p>
+                    
+                    <p>We are committed to developing software that simplifies work, enhances productivity, and supports sustainable growth for government institutions and enterprises.</p>
+                    
+                    <a href="#" class="btn btn-primary">Learn More About Us</a>
+                </div>
+                
+                <div class="about-stats">
+                    <div class="stat-box">
+                        <span class="number">5+</span>
+                        <span class="label">Years in Business</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="number">50+</span>
+                        <span class="label">Projects Delivered</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="number">10+</span>
+                        <span class="label">Government Agencies Served</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="number">100%</span>
+                        <span class="label">On-Time Delivery</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section class="careers">
+        <div class="container">
+            <div class="careers-container">
+                <div class="careers-content">
+                    <span class="careers-badge">Great Place to Work</span>
+                    <h2>Join Nigeria's Leading Tech Innovation Team</h2>
+                    <p>At Pellaj Ventures, we believe in talent, creativity, and results. Be part of a team dedicated to innovation and national development.</p>
+                    
+                    <ul class="positions-list">
+                        <li>
+                            <span class="position-title">Software Developers</span>
+                            <span class="position-tag">Hiring</span>
+                        </li>
+                        <li>
+                            <span class="position-title">UI/UX Designers</span>
+                            <span class="position-tag">Hiring</span>
+                        </li>
+                        <li>
+                            <span class="position-title">Project Managers</span>
+                            <span class="position-tag">Hiring</span>
+                        </li>
+                        <li>
+                            <span class="position-title">Field & Contract Executives</span>
+                            <span class="position-tag">Hiring</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="#" class="btn btn-primary">View Open Positions</a>
+                </div>
+                
+                <div class="careers-image" style="background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Services</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Software Development</a></li>
+                        <li><a href="#">Government Contracting</a></li>
+                        <li><a href="#">Technology Consulting</a></li>
+                        <li><a href="#">Solution Finder</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i>📍</i>
+                            <span>No. 7, Nobakhare Close, Off GRA Ihama Road, Benin City, Edo State</span>
+                        </li>
+                        <li>
+                            <i>📞</i>
+                            <span>+234-806-964-6617</span>
+                        </li>
+                        <li>
+                            <i>✉️</i>
+                            <span>info@pellajventures.com</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="social-links">
+                        <a href="#"><span>in</span></a>
+                        <a href="#"><span>f</span></a>
+                        <a href="#"><span>t</span></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Innovating Solutions. Powering Institutions.</h3>
+                    <p>Leading Nigerian technology firm providing proprietary software solutions and government contracting services.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Pellaj Ventures Limited. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script for header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.padding = '0.5rem 0';
+                header.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.padding = '1rem 0';
+                header.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.05)';
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        const navCta = document.querySelector('.nav-cta');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            const isVisible = navLinks.style.display === 'flex';
+            
+            if (isVisible) {
+                navLinks.style.display = 'none';
+                navCta.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navCta.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.backgroundColor = 'white';
+                navLinks.style.padding = '2rem';
+                navLinks.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
+                
+                navCta.style.position = 'absolute';
+                navCta.style.top = 'calc(100% + 200px)';
+                navCta.style.left = '0';
+                navCta.style.width = '100%';
+                navCta.style.padding = '0 2rem';
+            }
+        });
+    </script>
+</body>
+</html>
